@@ -6,13 +6,19 @@ import { A11y, Keyboard, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { ProfileCard, ProfileCardProps } from "../ProfileCard/ProfileCard";
 
-export type ProfileWithId = ProfileCardProps & { id: string };
+export type ProfileWithId = Omit<ProfileCardProps, "backgroundColor"> & {
+  id: string;
+};
 
 export interface ProfileCarouselProps {
+  backgroundColor: ProfileCardProps["backgroundColor"];
   profiles: ProfileWithId[];
 }
 
-export const ProfileCarousel = ({ profiles }: ProfileCarouselProps) => {
+export const ProfileCarousel = ({
+  backgroundColor,
+  profiles,
+}: ProfileCarouselProps) => {
   return (
     <Swiper
       breakpoints={{
@@ -29,7 +35,7 @@ export const ProfileCarousel = ({ profiles }: ProfileCarouselProps) => {
     >
       {profiles.map(({ id, ...profile }) => (
         <SwiperSlide key={id} className="flex justify-center">
-          <ProfileCard {...profile} />
+          <ProfileCard backgroundColor={backgroundColor} {...profile} />
         </SwiperSlide>
       ))}
     </Swiper>

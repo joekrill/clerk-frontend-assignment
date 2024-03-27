@@ -1,9 +1,9 @@
-import { expect, test } from "vitest";
 import { render, screen } from "@testing-library/react";
+import { expect, test } from "vitest";
 import App from "./App";
 
-test("renders count button", () => {
+test("renders the heading", () => {
   render(<App />);
-  const linkElement = screen.getByRole("button", { name: "increment" });
+  const linkElement = screen.getByRole("heading", { name: "My Clerks" });
   expect(linkElement).toBeInTheDocument();
 });

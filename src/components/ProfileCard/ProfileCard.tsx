@@ -1,4 +1,5 @@
 export interface ProfileCardProps {
+  backgroundColor?: string;
   email: string;
   location: string;
   name: string;
@@ -7,13 +8,17 @@ export interface ProfileCardProps {
 }
 
 export const ProfileCard = ({
+  backgroundColor,
   email,
   location,
   name,
   phoneNumber,
   pictureUrl,
 }: ProfileCardProps) => (
-  <article className="flex w-full max-w-sm flex-col items-center rounded-lg border border-gray-200 bg-white p-6 pb-10 text-center shadow">
+  <article
+    style={{ backgroundColor }}
+    className="flex w-full max-w-sm flex-col items-center rounded-lg border border-gray-200 bg-white p-6 pb-10 text-center shadow"
+  >
     <img
       className="mb-6 size-24 min-h-24 min-w-24 rounded-full shadow-lg"
       src={pictureUrl}
