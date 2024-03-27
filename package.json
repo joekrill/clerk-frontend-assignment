@@ -18,7 +18,8 @@
     "react-colorful": "^5.6.1",
     "react-dom": "^18.2.0",
     "reactjs-popup": "^2.0.6",
-    "swiper": "^11.0.7"
+    "swiper": "^11.0.7",
+    "tinycolor2": "^1.6.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.2",
@@ -26,6 +27,7 @@
     "@testing-library/user-event": "^14.5.2",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
+    "@types/tinycolor2": "^1.4.6",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
     "@vitejs/plugin-react": "^4.2.1",
