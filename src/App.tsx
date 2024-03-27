@@ -14,7 +14,7 @@ interface AppProps {
    * less than or equal to this nunmber of profiles available to scroll to the
    * right, the next page will be loaded.
    */
-  loadNextPageBuffer: number;
+  loadNextPageBuffer?: number;
 }
 
 function App({ loadNextPageBuffer = 5 }: AppProps) {
