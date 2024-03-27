@@ -1,4 +1,5 @@
 import tinyColor from "tinycolor2";
+
 export interface ProfileCardProps {
   backgroundColor?: string;
   email: string;
