@@ -1,18 +1,23 @@
-import "./App.css";
-import { ProfileCard } from "./components/ProfileCard/ProfileCard";
+import { ProfileCarousel } from "./components/ProfileCarousel/ProfileCarousel";
+import { randomUserPages } from "./data";
+
+const testProfiles = randomUserPages[0].results.map(
+  ({ name, email, location, phone, picture, login }) => ({
+    id: login.uuid,
+    name: `${name.title} ${name.first} ${name.last}`,
+    email,
+    location: `${location.city}, ${location.state}, ${location.country}`,
+    phoneNumber: phone,
+    pictureUrl: picture.medium,
+  }),
+);
 
 function App() {
   return (
-    <div className="flex h-screen w-full flex-col items-stretch">
-      <h1 className="my-8 text-5xl font-semibold">My Clerks</h1>
-      <div className="mx-auto my-4 flex-1 items-center">
-        <ProfileCard
-          name="Karl Johnson"
-          email="karl.johnson@example.com"
-          location="New York, New York, United States"
-          phoneNumber="(268) 420-4900"
-          pictureUrl="https://randomuser.me/api/portraits/med/men/6.jpg"
-        />
+    <div className="flex h-dvh w-full flex-col items-stretch p-8">
+      <h1 className="mb-8 text-4xl font-semibold sm:text-5xl">My Clerks</h1>
+      <div className="flex max-h-96 w-full flex-1">
+        <ProfileCarousel profiles={testProfiles} />
       </div>
     </div>
   );
